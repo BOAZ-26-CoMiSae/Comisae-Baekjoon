@@ -1,8 +1,11 @@
+package 손채민;
 /*
 최댓값(브론즈)
 */
 
 import java.io.*;  // 이거 공간복잡도 ? 
+
+// 1주차
 
 public class Main2562{
 

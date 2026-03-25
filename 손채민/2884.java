@@ -1,5 +1,8 @@
+package 손채민;
 import java.io.*;
 import java.util.*;
+
+// 1주차 제출  
 
 class Main {
     public static void main(String[] args) throws IOException {
