@@ -1,4 +1,6 @@
-package 조성빈.week2;
+package 조성빈.week1;
+
+import java.util.Scanner;
 
 public class 10250 {
     public static void main(String[] args) {
