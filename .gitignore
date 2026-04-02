@@ -10,3 +10,6 @@ gen/
 # 빌드 결과물 폴더 무시
 bin/
 build/
+
+# VSCode 설정 파일 무시
+.vscode/
