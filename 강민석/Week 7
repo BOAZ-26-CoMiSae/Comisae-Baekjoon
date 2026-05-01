@@ -1,0 +1,117 @@
+소수 찾기
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int primeCount = 0;
+        
+        for (int i = 0; i < n; i++) {
+            int num = sc.nextInt();
+            if (isPrime(num)) {
+                primeCount++;
+            }
+        }
+        
+        System.out.println(primeCount);
+        sc.close();
+    }
+    
+    // 소수 판별 메서드
+    public static boolean isPrime(int num) {
+        if (num < 2) {
+            return false;
+        }
+        // 2부터 num의 제곱근까지만 확인하면 충분함
+        for (int i = 2; i * i <= num; i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+
+
+
+
+분해합
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int result = 0;
+        
+        for (int i = 1; i < n; i++) {
+            int number = i;
+            int sum = number; // 분해합: 자기 자신 + 각 자리수
+            
+            // 각 자리수 더하기
+            while (number > 0) {
+                sum += number % 10;
+                number /= 10;
+            }
+            
+            // 분해합이 N과 같다면 가장 작은 생성자를 찾은 것
+            if (sum == n) {
+                result = i;
+                break;
+            }
+        }
+        
+        System.out.println(result);
+        sc.close();
+    }
+}
+
+
+
+
+
+웰컴 키트
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.util.StringTokenizer;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
+        // 첫째 줄: 참가자의 수 N
+        long n = Long.parseLong(br.readLine());
+        
+        // 둘째 줄: 티셔츠 사이즈별 신청자의 수
+        long[] sizes = new long[6];
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < 6; i++) {
+            sizes[i] = Long.parseLong(st.nextToken());
+        }
+        
+        // 셋째 줄: 티셔츠 묶음 T, 펜 묶음 P
+        st = new StringTokenizer(br.readLine());
+        long t = Long.parseLong(st.nextToken());
+        long p = Long.parseLong(st.nextToken());
+        
+        // 티셔츠 묶음 계산
+        long tBundles = 0;
+        for (int i = 0; i < 6; i++) {
+            tBundles += sizes[i] / t;
+            if (sizes[i] % t != 0) {
+                tBundles++;
+            }
+        }
+        
+        // 펜 묶음 및 낱개 계산
+        long pBundles = n / p;
+        long pSingle = n % p;
+        
+        // 출력
+        System.out.println(tBundles);
+        System.out.println(pBundles + " " + pSingle);
+    }
+}
