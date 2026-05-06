@@ -1,3 +1,4 @@
-def solution(num1, num2):
-    answer = num1 * num2
-    return answer
+message = "Let's go!"
+
+print("3\n2\n1")
+print(message)
