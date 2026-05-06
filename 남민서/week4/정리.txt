@@ -1,0 +1,64 @@
+==============================================================================
+
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+========================
+BufferedReader
+========================
+한 줄을 통째로 가져옴
+=> String line = br.readLine();
+
+========================
+InputStreamReader
+========================
+바이트 → 문자로 변환
+(System.in은 바이트 스트림인데, 우리는 문자(String)으로 써야하기 때문)
+
+
+========================
+
+System.in (바이트)
+   ↓
+InputStreamReader (문자로 변환)
+   ↓
+BufferedReader (빠르게 읽기)
+
+==============================================================================
+
+
+StringTokenizer st = new StringTokenizer(br.readLine());
+
+====================
+StringTokenizer
+====================
+문자열 쪼개기 (토큰 분리)
+
+StringTokenizer st = new StringTokenizer(br.readLine());
+
+int a = Integer.parseInt(st.nextToken());
+int b = Integer.parseInt(st.nextToken());
+int c = Integer.parseInt(st.nextToken());
+
+=============================================================================
+
+// =====
+
+// nextToken()
+// 쪼개진 값들 중에서 다음 값을 꺼내는 메서드임
+// StringTokenizer가 값들을 쪼개서 줄 세워놓으면 nextToken()이 앞에서부터 꺼냄 
+
+// readLine()
+// 한 줄 전체 읽기 때문에 띄어쓰기로 입력 받으면 정수 변환 못해서 에러
+// 따라서 이 경우는 StringTokenizer 사용 !
+
+// =====
+
+// StringBuilder()
+// 문자열을 효율적으로 이어붙이기 위한 도구로, 같은 공간에 계속 이어 붙이므로 빠름
+
+// String 방식 = 이어 붙일 때마다 새로운 객체를 만들어야 해서 느림
+    // String result = "";
+    // result = result + "AAA";
+
+// =====
+

@@ -1,0 +1,44 @@
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
+        int[] input = new int[3];
+        for (int i = 0; i < 3; i++) {
+            input[i] = Integer.parseInt(br.readLine());
+        }
+        
+        // 세 수의 곱
+        int multipleNum = input[0] * input[1] * input[2];
+        
+        // 문자열로 변환 후 문자 배열로 만들기
+        String multipleStr = String.valueOf(multipleNum);
+        char[] multipleStrArr = multipleStr.toCharArray();
+        
+        int[] count = new int[10];
+        
+        // break를 추가하여 올바르게 카운트되도록 수정
+        for (int i = 0; i < multipleStrArr.length; i++) {
+            switch (multipleStrArr[i]) {
+                case '0': count[0]++; break;
+                case '1': count[1]++; break;
+                case '2': count[2]++; break;
+                case '3': count[3]++; break;
+                case '4': count[4]++; break;
+                case '5': count[5]++; break;
+                case '6': count[6]++; break;
+                case '7': count[7]++; break;
+                case '8': count[8]++; break;
+                case '9': count[9]++; break;
+            }
+        }
+        
+        // 불필요한 줄바꿈 제거
+        for (int i = 0; i < 10; i++) {
+            System.out.println(count[i]);
+        }
+    }
+}
