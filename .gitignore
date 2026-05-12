@@ -13,3 +13,5 @@ build/
 
 # VSCode 설정 파일 무시
 .vscode/
+
+.DS_Store

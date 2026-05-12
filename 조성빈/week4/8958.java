@@ -14,7 +14,7 @@ public class 8958 {
             int currentOCount = 0;
 
             for(int j=0; j<s.length(); j++) {
-                if(s.charAt(j) == 'O') {
+                if(s.charAt(j) == 'O') { //s.charAt() 생각 못 함
                     currentOCount++;
                     totalScore += currentOCount;
                 } else {
