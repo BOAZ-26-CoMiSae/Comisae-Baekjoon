@@ -1,4 +1,4 @@
-# Label 0 - 정수를 나선형으로 배치하기
+# Lavel 0: 정수를 나선형으로 배치하기
 
 def solution(n):
 
