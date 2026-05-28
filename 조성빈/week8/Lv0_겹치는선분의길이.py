@@ -13,4 +13,4 @@ def solutions(lines):
         if count >= 2:
             answer += 1
 
-    return answer
+A
