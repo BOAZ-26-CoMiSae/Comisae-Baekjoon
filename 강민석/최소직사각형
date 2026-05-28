@@ -1,0 +1,20 @@
+def solution(sizes):
+    # 1. 모든 명함의 가로, 세로 값을 한 번에 모아서 8개의 숫자가 담긴 리스트를 만든다.
+    all_values = []
+    for w, h in sizes:
+        all_values.append(w)
+        all_values.append(h)
+        
+    # 8개 값 중 가장 큰 값을 첫 번째 변으로 설정한다.
+    max_side = max(all_values)
+    
+    # 2. 각 명함 세트 각각의의 최솟값들만 따로 모은다.
+    min_values = []
+    for w, h in sizes:
+        min_values.append(min(w, h))
+        
+    # 그 최솟값들 '중' 가장 큰 값을 다른 한 변으로 설정한다.
+    min_side_max = max(min_values)
+    
+    # 두 변을 곱해서 최소 지갑 크기 반환한다.
+    return max_side * min_side_max
