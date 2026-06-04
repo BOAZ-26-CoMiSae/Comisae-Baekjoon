@@ -1,0 +1,15 @@
+# level-0: 겹치는 선분의 길이
+def solution(lines):
+    answer = 0
+    
+    count = [0] * 201
+    
+    for start, end in lines:
+        for i in range(start, end): 
+            count[i + 100] += 1
+        
+    for c in count:
+        if c >= 2:
+            answer += 1
+
+    return answer
